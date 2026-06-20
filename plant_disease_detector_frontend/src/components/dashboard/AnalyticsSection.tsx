@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ChartBarIcon, EyeIcon, CheckCircleIcon, ExclamationTriangleIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline';
 
 // --- API Configuration ---
-const API_BASE_URL = 'http://127.0.0.1:8000'; // Assuming this is your base URL
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000';
 const ANALYTICS_API_ENDPOINT = '/api/plant_doctor_ai/analytics/';
 
 // --- TypeScript Interfaces for API Response ---

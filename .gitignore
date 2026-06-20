@@ -3,6 +3,8 @@ plant_disease_detector_frontend/node_modules/
 plant_disease_detector_frontend/.next/
 plant_disease_detector_frontend/dist/
 plant_disease_detector_frontend/build/
+plant_disease_detector/staticfiles/
+plant_disease_detector/media/
 *.log
 *.lock
 
