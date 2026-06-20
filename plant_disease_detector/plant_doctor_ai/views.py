@@ -49,6 +49,7 @@ class AnalyzePlantView(APIView):
 
         # 1. Predict disease using the PyTorch model
         prediction = model_service.predict(image_file)
+        image_file.seek(0)
         if not prediction:
             return Response(
                 {"error": "Failed to analyze the image."},
