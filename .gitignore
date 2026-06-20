@@ -1,0 +1,29 @@
+# Node.js
+plant_disease_detector_frontend/node_modules/
+plant_disease_detector_frontend/.next/
+plant_disease_detector_frontend/dist/
+plant_disease_detector_frontend/build/
+*.log
+*.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.env
+*.venv/
+*.egg-info/
+.env
+.venv/
+venv/
+plant_disease_detector/.env
+plant_disease_detector/*.env
+# VS Code
+.vscode/
+
+# macOS / Linux / Windows
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
