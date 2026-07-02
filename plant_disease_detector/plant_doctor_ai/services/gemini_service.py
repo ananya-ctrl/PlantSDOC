@@ -33,10 +33,10 @@ class GeminiService:
             raise ValueError("GEMINI_API_KEY not found in environment variables.")
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel(
-            'models/gemini-2.5-pro',
+            'models/gemini-1.5-flash',
             system_instruction=CHATBOT_SYSTEM_PROMPT
         )
-        self.structured_model = genai.GenerativeModel('models/gemini-2.5-pro')
+        self.structured_model = genai.GenerativeModel('models/gemini-1.5-flash')
         print("✅ Gemini Service initialized.")
 
     def get_treatment_info(self, disease_name, language='en'):
