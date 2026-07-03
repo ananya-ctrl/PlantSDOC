@@ -25,6 +25,7 @@ def ping(request):                    # ADD THIS
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ping/', ping), 
     path('api/users/', include('users.urls')),
     path('api/plant_doctor_ai/', include('plant_doctor_ai.urls')),
 ]
