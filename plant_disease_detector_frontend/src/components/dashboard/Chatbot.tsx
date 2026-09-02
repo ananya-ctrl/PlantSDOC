@@ -146,12 +146,12 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="fixed bottom-5 right-5 z-50 sm:bottom-7 sm:right-7">
       {/* Chat Window */}
       {isOpen && (
-        <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/20 w-80 h-[28rem] mb-4 flex flex-col">
+        <div className="mb-4 flex h-[31rem] w-[calc(100vw-2.5rem)] max-w-[23rem] flex-col overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-white/95 shadow-2xl shadow-emerald-950/20 backdrop-blur-xl">
           {/* Header */}
-          <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
+          <div className="flex items-center justify-between bg-gradient-to-r from-[#164d3b] to-[#1f7652] p-4 text-white">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                 <Leaf className="w-5 h-5" />
@@ -229,7 +229,8 @@ const Chatbot = () => {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+        className="rounded-2xl bg-gradient-to-br from-[#1f7652] to-[#12382d] p-4 text-white shadow-xl shadow-emerald-950/25 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl"
+        aria-label={isOpen ? 'Close plant assistant' : 'Open plant assistant'}
       >
         <ChatBubbleLeftRightIcon className="w-6 h-6" />
       </button>

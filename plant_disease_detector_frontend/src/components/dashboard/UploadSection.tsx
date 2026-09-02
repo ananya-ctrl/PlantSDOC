@@ -135,23 +135,23 @@ const UploadSection = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">{t('dashboard.upload.title')}</h1>
-        <p className="text-gray-600">{t('dashboard.upload.subtitle')}</p>
+    <div className="mx-auto max-w-6xl">
+      <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <div><span className="mb-3 inline-flex rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase tracking-[.16em] text-emerald-800">Plant health workspace</span><h1 className="text-3xl font-bold tracking-tight text-[#17392e] sm:text-4xl">{t('dashboard.upload.title')}</h1><p className="mt-2 max-w-2xl text-gray-600">{t('dashboard.upload.subtitle')}</p></div>
+        <div className="flex items-center gap-2 rounded-full border border-emerald-900/10 bg-white/70 px-4 py-2 text-sm font-medium text-emerald-800 shadow-sm"><span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,.12)]" /> AI model ready</div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.08fr_.92fr]">
         {/* Upload Area */}
         <div className="space-y-6">
           <div
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
-            className={`border-2 border-dashed rounded-xl p-8 text-center transition-all duration-200 cursor-pointer ${
+            className={`group relative min-h-[420px] cursor-pointer overflow-hidden rounded-[2rem] border-2 border-dashed p-8 text-center shadow-sm transition-all duration-300 sm:p-12 ${
               isDragging
-                ? 'border-green-500 bg-green-50'
-                : 'border-gray-300 hover:border-green-400 hover:bg-green-50'
+                ? 'scale-[1.01] border-emerald-500 bg-emerald-50'
+                : 'border-emerald-900/15 bg-white/70 hover:-translate-y-1 hover:border-emerald-500 hover:bg-white hover:shadow-xl'
             }`}
             onClick={() => fileInputRef.current?.click()}
           >
@@ -163,13 +163,13 @@ const UploadSection = () => {
               className="hidden"
             />
             
-            <div className="space-y-4">
-              <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                <CloudArrowUpIcon className="w-8 h-8 text-green-600" />
+            <div className="flex min-h-[320px] flex-col items-center justify-center space-y-5">
+              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-emerald-100 to-green-200 shadow-inner transition duration-300 group-hover:scale-105 group-hover:rotate-2">
+                <CloudArrowUpIcon className="h-10 w-10 text-emerald-700" />
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="mb-2 text-xl font-bold text-[#17392e]">
                   {t('dashboard.upload.dropZone')}
                 </h3>
                 <p className="text-gray-600 mb-4">
@@ -180,14 +180,14 @@ const UploadSection = () => {
                 </p>
               </div>
               
-              <button className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors duration-200">
+              <button type="button" className="btn-animate rounded-xl bg-[#176b49] px-7 py-3 font-semibold text-white shadow-lg shadow-emerald-900/15 transition hover:bg-[#12583c]">
                 {t('dashboard.upload.chooseFile')}
               </button>
             </div>
           </div>
 
           {isAnalyzing && (
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div className="surface-card rounded-2xl p-6">
               <div className="flex items-center space-x-4">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-500"></div>
                 <div>
@@ -204,9 +204,9 @@ const UploadSection = () => {
           {selectedImage && selectedImage.result ? (
             <ResultCard image={selectedImage} />
           ) : (
-            <div className="bg-white/50 backdrop-blur-sm rounded-xl p-8 border border-white/20 text-center">
-              <PhotoIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-600 mb-2">{t('dashboard.upload.noAnalysis')}</h3>
+            <div className="surface-card flex min-h-[420px] flex-col items-center justify-center rounded-[2rem] p-8 text-center">
+              <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl bg-[#f2f6ef]"><PhotoIcon className="h-10 w-10 text-emerald-800/35" /></div>
+              <h3 className="mb-2 text-lg font-semibold text-[#355246]">{t('dashboard.upload.noAnalysis')}</h3>
               <p className="text-gray-500">{t('dashboard.upload.noAnalysisSubtext')}</p>
             </div>
           )}

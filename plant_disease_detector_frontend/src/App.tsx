@@ -19,7 +19,7 @@ function App() {
       <AppProvider>
       <PlantDataProvider>
         <Router>
-          <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
+          <div className="app-shell min-h-screen">
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
