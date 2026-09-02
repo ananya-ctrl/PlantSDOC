@@ -28,9 +28,11 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
   };
 
   return (
-    <div className="flex-1 p-8">
-      {renderContent()}
-    </div>
+    <main className="min-w-0 flex-1 px-4 pb-24 pt-20 sm:px-6 md:px-8 md:py-8 lg:px-12">
+      <div key={activeTab} className="page-enter">
+        {renderContent()}
+      </div>
+    </main>
   );
 };
 
